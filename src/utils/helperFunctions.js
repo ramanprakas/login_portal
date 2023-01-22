@@ -128,7 +128,6 @@ export const currentTimeText = () => {
     for (var i = 0; i < data.length; i++) {
         if (hr >= data[i][0]) {
             return data[i][1]
-            break;
         }
     }
 };

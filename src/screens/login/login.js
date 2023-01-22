@@ -1,45 +1,36 @@
-import React from 'react';
+import React from "react";
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 import {
-    Avatar,
-    Button, Checkbox, Divider, FormControl, FormControlLabel, Grid, Hidden, IconButton,
-    InputAdornment, InputLabel, OutlinedInput, Stack, TextField, Typography
+    Button, Checkbox, FormControl, FormControlLabel, Grid, Hidden, IconButton,
+    InputAdornment, InputLabel, OutlinedInput, TextField, Typography
 } from '@mui/material';
 import { makeStyles } from "@mui/styles";
-import { LocalStorageKeys } from '../../utils';
-import { useNavigate } from 'react-router-dom';
-import { AppRoutes } from '../../router/routes';
-import { LoginSuccess } from "../../router/access";
-import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { Box } from '@mui/system';
-import FaceBook from '../../assets/facebook-social-icon.svg';
-import Github from '../../assets/github.png';
-import Google from '../../assets/google.png';
-import Twitter from '../../assets/twitter.png';
+import { useNavigate } from 'react-router-dom';
+// import { LoginSuccess } from "../../router/access";
+import { AppRoutes } from '../../router/routes';
+import { LocalStorageKeys } from '../../utils';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         textAlign: "center",
-        marginTop: "0"
+        height: "100vh",
+        overflow: "hidden"
     },
     welcome: {
         color: '#000',
-        fontWeight: 600,
-        marginBottom: 3,
     },
     login: {
         padding: '11px',
         fontSize: 16,
         fontWeight: 600,
         borderRadius: '6px',
-        backgroundColor: '#9155fd',
-        marginBottom: 6,
-        '& :hover': {
-            textDecoration: 'none',
-            backgroundColor: '#804bdf',
-            boxShadow: '#3a35418f 0px 6px 18px -8px'
-        }
+        background: '#171640',
+        marginBottom: 10,
     },
     forget: {
-        cursor: 'pointer'
+        cursor: 'pointer',
+        textDecoration: "underline"
     }
 }))
 
@@ -54,12 +45,11 @@ export const Login = props => {
         navigate(AppRoutes.dashboard);
     }
 
-    React.useEffect(() => {
-        if (localStorage.getItem(LocalStorageKeys.authToken)) {
-            navigate(LoginSuccess())
-        }
-        console.log("here")
-    })
+    // React.useEffect(() => {
+    //     if (localStorage.getItem(LocalStorageKeys.authToken)) {
+    //         navigate(LoginSuccess(AppRoutes.dashboard))
+    //     }
+    // }, []);
 
     // Password hide and show function
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -68,9 +58,12 @@ export const Login = props => {
         <Grid container spacing={2}>
             <Hidden mdDown={true}>
                 <Grid item md={8} sm={8} bgcolor={'#f4f5fa'}>
-                    <img src='https://demos.themeselection.com/marketplace/materio-mui-react-nextjs-admin-template/demo-1/images/pages/auth-v2-login-illustration-light.png' width={'100%'} height={'100%'} alt='al' />
+                    <img src='https://minimals.cc/assets/illustrations/illustration_dashboard.png'
+                        style={{ objectFit: 'scale-down' }}
+                        width={'100%'} height={'100%'} alt='login_page_logo' />
                 </Grid>
             </Hidden>
+
             {/* login section */}
             <Grid item xs={12} md={4} sm={12} textAlign={'start'}>
                 <Box padding={'10px 23px'} marginTop={'13%'}>
@@ -98,7 +91,7 @@ export const Login = props => {
                                 <InputAdornment position="end">
                                     <IconButton
                                         aria-label="toggle password visibility"
-                                        onClick={handleClickShowPassword}
+                                        onClick={() => handleClickShowPassword()}
                                         edge="end"
                                     >
                                         {showPassword ? <VisibilityOff /> : <Visibility />}
@@ -108,56 +101,37 @@ export const Login = props => {
                             label="Password"
                         />
                     </FormControl>
+
                     <Grid display={'flex'} justifyContent={'space-between'} alignItems={'center'} marginBottom={3}>
                         <div>
                             <FormControlLabel control={<Checkbox color='secondary' defaultChecked />} label="Remember Me"
-                                sx={{ color: '#af9d99', fontSize: '12px' }} />
+                                sx={{ color: '#000', fontSize: '12px' }} />
                         </div>
                         <div>
-                            <Typography variant='body1' color={'#9f76fd'} className={classes.forget}>Forgot Password?</Typography>
+                            <Typography variant='body1' color={'#fd7e97'} className={classes.forget}>Forgot Password?</Typography>
                         </div>
                     </Grid>
+
                     <Button
                         className={classes.login}
                         variant={"contained"}
-                        onClick={onLogin}
+                        onClick={() => onLogin()}
                         fullWidth={true}
                     >
                         LogIn
                     </Button>
 
-                    <Grid display={'flex'} justifyContent={'space-around'} alignItems={'center'} marginBottom={4} >
-                        <Typography variant='body2' color={'#af9d99'}>
+                    <Grid display={'flex'} justifyContent={'space-between'} alignItems={'center'} marginBottom={4} >
+                        <Typography variant='body2' color={'#000'}>
                             New on our platform?
                         </Typography>
-                        <Typography variant='body2' color={'#9f76fd'} className={classes.forget}>
+                        <Typography variant='body2' color={'#fd7e97'} className={classes.forget}>
                             Create an account
                         </Typography>
                     </Grid>
 
-                    <Divider textAlign="center">Or</Divider>
-                    <br />
-                    <Stack direction="row" spacing={1} display={'flex'} justifyContent={'center'} >
-                        <Avatar alt="Remy Sharp"
-                            src={FaceBook}
-                            sx={{ width: 35, height: 35, cursor: 'pointer' }} />
-                        <Avatar alt="Travis Howard"
-                            src={Twitter}
-                            sx={{ width: 35, height: 35, cursor: 'pointer' }}
-                        />
-                        <Avatar alt="Cindy Baker"
-                            src={Github}
-                            sx={{ width: 35, height: 35, cursor: 'pointer' }}
-                        />
-                        <Avatar alt="Cindy Baker"
-                            src={Google}
-                            sx={{ width: 35, height: 35, cursor: 'pointer' }}
-                        />
-                    </Stack>
                 </Box>
             </Grid>
         </Grid>
-
-
-    </div >
+    </div>
 }

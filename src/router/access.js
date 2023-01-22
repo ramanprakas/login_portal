@@ -17,7 +17,7 @@ export const Redirections = (userRole) => {
 export const LoginSuccess = (userRole) => {
     switch (userRole) {
         default:
-            return '/';
+            return '/dashboard';
     }
 }
 
