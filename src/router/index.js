@@ -12,7 +12,7 @@ import {
   Dashboard,
   Login,
 } from './../screens';
-import Events from "../screens/events/events";
+import EventsParent from "../screens/events";
 
 const RouterApp = (props) => {
 
@@ -28,7 +28,7 @@ const RouterApp = (props) => {
         } />
         <Route path={AppRoutes.events} element={
           <PrivateRouter path={AppRoutes.events}>
-            <Events />
+            <EventsParent />
           </PrivateRouter>
         } />
 

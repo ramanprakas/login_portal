@@ -1,5 +1,6 @@
 import React from "react";
 import Events from './events';
+import { withNavBars } from "../../HOCs";
 
 class EventsParent extends React.Component {
     render() {
@@ -7,4 +8,4 @@ class EventsParent extends React.Component {
     }
 }
 
-export default EventsParent;
+export default withNavBars(EventsParent);
