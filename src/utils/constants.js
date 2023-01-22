@@ -94,7 +94,7 @@ export let sampleSideMenuJson = [
             {
                 name: "Events",
                 icon: <DashboardIcon />,
-                link: '/event',
+                link: '/',
             },
             {
                 name: "Company News",
@@ -220,6 +220,30 @@ export let sampleSideMenuJson = [
             }
         ]
     }
+];
+
+export let dashBoardWiedgets = [
+    {
+        title: "Payslip"
+    },
+    {
+        title: "Review"
+    },
+    {
+        title: "Upcoming Holidays"
+    },
+    {
+        title: "Announcements"
+    },
+    {
+        title: "IT Declaration"
+    },
+    {
+        title: "Birthday"
+    },
+    {
+        title: "Favorites"
+    },
 ];
 
 // To build version string

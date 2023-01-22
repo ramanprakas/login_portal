@@ -3,7 +3,9 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import { AppBar, Avatar, Divider, Drawer, IconButton, ListItemIcon, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import { makeStyles } from "@mui/styles";
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SideNavBar } from '..';
+import { AppRoutes } from '../../../router/routes';
 import { LocalStorageKeys } from '../../../utils';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
         background: "#fff", color: "#000",
-        boxShadow: 'rgb(145 158 171 / 20%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px',
+        boxShadow: 'none',
     },
     title: {
         display: 'block',
@@ -29,14 +31,15 @@ const useStyles = makeStyles((theme) => ({
     },
     drawer: {
         height: "100vh",
-        background: '#171640',
-        color: "#fff",
+        background: '#47525d',
+        color: "#dcdce0",
     }
 }));
 
 export const TopNavBar = (props) => {
 
     const classes = useStyles();
+    const navigate = useNavigate();
 
     const [state, setState] = React.useState({
         openSideNavBar: false
@@ -69,7 +72,12 @@ export const TopNavBar = (props) => {
             ...state,
             openSideNavBar: !state.openSideNavBar
         })
-    }
+    };
+
+    const logout = () => {
+        localStorage.clear();
+        navigate(AppRoutes.login)
+    };
 
     return (
         <div className={classes.grow}>
@@ -218,7 +226,7 @@ export const TopNavBar = (props) => {
                     </ListItemIcon>
                     Settings
                 </MenuItem>
-                <MenuItem>
+                <MenuItem onClick={() => logout()}>
                     <ListItemIcon>
                         <Logout fontSize="small" />
                     </ListItemIcon>

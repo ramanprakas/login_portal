@@ -16,10 +16,11 @@ const useStyles = makeStyles((theme) => ({
     },
     drawer: {
         height: props => props?.isMobile ? `100vh` : `calc(100vh - 64px)`,
-        background: '#171640',
-        color: "#fff",
-        "& svg": { color: "#fff" },
-        "& .Mui-selected": { background: "#46c3c370", "&:hover": { background: "#46c3c370" } },
+        background: '#47525d',
+        color: "#dcdce0",
+        "& svg": { color: "#dcdce0" },
+        "& .Mui-selected": { background: "#00000042", "&:hover": { background: "#00000042" } },
+        boxShadow: 'none',
         width: drawerWidth,
     },
     drawerContainer: {
@@ -77,7 +78,8 @@ export const SideNavBar = (props) => {
                                             </ListItemButton>
                                         })}
                                     </List>
-                                </Collapse>}</>
+                                </Collapse>}
+                            </>
                         ))}
                     </List>
                 </div>
