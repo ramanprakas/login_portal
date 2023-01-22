@@ -1,21 +1,19 @@
-import React from "react";
-import { AppAuth } from "./App.auth";
-import { AppTheme } from "./App.theme";
-import { AppAlert } from "./App.alert";
-import AppErrorBoundary from "./App.errorBoundry";
-import RouterApp from "./router";
-import ApolloClient from "./App.gqlclient";
-import { AppDrawer } from "./App.drawer";
 import { CssBaseline } from "@mui/material";
-import { AppDialog } from "./App.dialog";
+import React from "react";
+import { AppAlert } from "./App.alert";
+import { AppAuth } from "./App.auth";
 import { AppBackDrop } from "./App.backdrop";
+import { AppDialog } from "./App.dialog";
+import { AppDrawer } from "./App.drawer";
+import AppErrorBoundary from "./App.errorBoundry";
 import AppFirebase from "./App.firebase"; //For Push Notification thing
+import { AppTheme } from "./App.theme";
 import { AppRedux } from "./redux";
+import RouterApp from "./router";
 
 const App = () => {
   return (
     <AppRedux>
-      <ApolloClient>
         <AppErrorBoundary>
           <AppAuth>
             <AppTheme>
@@ -34,7 +32,6 @@ const App = () => {
             </AppTheme>
           </AppAuth>
         </AppErrorBoundary>
-      </ApolloClient>
     </AppRedux>
   );
 }

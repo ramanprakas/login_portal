@@ -1,3 +1,5 @@
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import { AppRoutes } from '../router/routes';
 /**
  * Object with role as key and value, which is used for 
  * comparison of role in different place.
@@ -71,6 +73,154 @@ export let LocalStorageKeys = {
     authToken: "auth_token",
     version: "version"
 };
+
+
+export let sampleSideMenuJson = [
+    {
+        name: "Home",
+        icon: <DashboardIcon />,
+        link: AppRoutes.dashboard,
+    },
+    {
+        name: "Feeds",
+        icon: <DashboardIcon />,
+        link: '/',
+        subMenus: [
+            {
+                name: "Appreciations",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "Events",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "Company News",
+                icon: <DashboardIcon />,
+                link: '/',
+            }
+        ]
+    },
+    {
+        name: "Documents",
+        icon: <DashboardIcon />,
+        link: '/',
+    },
+    {
+        name: "To Do",
+        icon: <DashboardIcon />,
+        link: '/',
+        subMenus: [
+            {
+                name: "Task",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "Review",
+                icon: <DashboardIcon />,
+                link: '/',
+            }
+        ]
+    },
+    {
+        name: "Salary",
+        icon: <DashboardIcon />,
+        link: '/',
+        subMenus: [
+            {
+                name: "Payslips",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "YID Reports",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "IT Satement",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "IT Declaration",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "Loan And Advances",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "Salary Revision",
+                icon: <DashboardIcon />,
+                link: '/',
+            }
+        ]
+    }, {
+        name: "Leave",
+        icon: <DashboardIcon />,
+        link: '/',
+        subMenus: [
+            {
+                name: "Leave Apply",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "Leave Balances",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "Leave Calender",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "Holiday Calender",
+                icon: <DashboardIcon />,
+                link: '/',
+            }
+        ]
+    }, {
+        name: "Attendance",
+        icon: <DashboardIcon />,
+        link: '/',
+        subMenus: [
+            {
+                name: "Attendence Info",
+                icon: <DashboardIcon />,
+                link: '/',
+            }
+        ]
+    }, {
+        name: "Organization",
+        icon: <DashboardIcon />,
+        link: '/',
+        subMenus: [
+            {
+                name: "Peoples",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "Birthday Folks",
+                icon: <DashboardIcon />,
+                link: '/',
+            },
+            {
+                name: "Department",
+                icon: <DashboardIcon />,
+                link: '/',
+            }
+        ]
+    }
+];
 
 // To build version string
 export const VersionFetchURL = `${window.location.protocol}//${window.location.hostname}${window.location.port ? ":" + window.location.port : ''}/meta.json?v=${+new Date()}`;

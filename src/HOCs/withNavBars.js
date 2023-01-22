@@ -1,18 +1,18 @@
-import React from "react";
 import { makeStyles } from "@mui/styles";
-import { TopNavBar, SideNavBar } from '../components';
+import React from "react";
+import { SideNavBar, TopNavBar } from '../components';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    height: "100%"
+    height: "100vh"
   },
   content: {
     width: '100%',
     height: 'calc(100% - 64px)',
     overflow: "auto",
     [theme.breakpoints.up("sm")]: {
-      paddingLeft: 56
+      paddingLeft: 200
     },
     [theme.breakpoints.down('md')]: {
       paddingLeft: 0
@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     }
   }
 }));
-
 
 const withNavBars = (Component) => (props) => {
   const classes = useStyles({ props });
