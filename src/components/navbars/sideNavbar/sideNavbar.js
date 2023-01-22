@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
     drawerContainer: {
         overflow: 'hidden',
-        height:'calc(100vh - 64px)',
+        height: 'calc(100vh - 64px)',
     },
 }));
 
@@ -37,6 +37,7 @@ export const SideNavBar = (props) => {
     const location = useLocation();
 
     const onListClick = (data) => {
+        debugger
         if (data.link) {
             navigate(data.link)
         }

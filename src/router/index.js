@@ -10,11 +10,12 @@ import PrivateRouter from "./privateRouter";
 import {
   NotFound,
   Dashboard,
-  Login
+  Login,
 } from './../screens';
+import Events from "../screens/events/events";
 
 const RouterApp = (props) => {
-  
+
   return (
     <BrowserRouter>
       <Routes>
@@ -23,6 +24,11 @@ const RouterApp = (props) => {
         <Route path={AppRoutes.dashboard} element={
           <PrivateRouter path={AppRoutes.dashboard}>
             <Dashboard />
+          </PrivateRouter>
+        } />
+        <Route path={AppRoutes.events} element={
+          <PrivateRouter path={AppRoutes.events}>
+            <Events />
           </PrivateRouter>
         } />
 
