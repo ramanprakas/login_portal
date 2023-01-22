@@ -115,3 +115,20 @@ export const distance = (lat1, lon1, lat2, lon2, unit) => {
         return dist;
     }
 }
+
+export const currentTimeText = () => {
+    var data = [
+        [22, 'Working Late!'],
+        [18, 'Good Evening!'],
+        [12, 'Good Afternoon!'],
+        [5, 'Good Morning!'],
+        [0, 'Whoa, Early Bird!']
+    ],
+        hr = new Date().getHours();
+    for (var i = 0; i < data.length; i++) {
+        if (hr >= data[i][0]) {
+            return data[i][1]
+            break;
+        }
+    }
+};
