@@ -43,7 +43,7 @@ export const SideNavBar = (props) => {
         }
     };
     const handleOPenChildMenu = (index) => {
-        setSubChild(index === subChild ? null : index)
+        setSubChild(index === subChild ? null : index);
     };
 
 
@@ -72,7 +72,7 @@ export const SideNavBar = (props) => {
                                     <List component="div" disablePadding>
                                         {navBar?.subMenus?.map(child => {
                                             return <ListItemButton sx={{ pl: 4 }}
-                                                onClick={(e) => onListClick(navBar)}>
+                                                onClick={(e) => onListClick(child)}>
                                                 {child?.icon}&nbsp;
                                                 <ListItemText primary={child?.name} />
                                             </ListItemButton>

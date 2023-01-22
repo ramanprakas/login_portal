@@ -94,7 +94,7 @@ export let sampleSideMenuJson = [
             {
                 name: "Events",
                 icon: <DashboardIcon />,
-                link: AppRoutes.events,
+                link: '/event',
             },
             {
                 name: "Company News",
