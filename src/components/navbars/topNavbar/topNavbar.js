@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
         background: "#fff", color: "#000",
-        boxShadow: 'none',
+        boxShadow: 'rgb(145 158 171 / 20%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px',
     },
     title: {
         display: 'block',

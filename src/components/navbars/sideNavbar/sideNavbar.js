@@ -54,7 +54,7 @@ export const SideNavBar = (props) => {
                 square
             >
                 <div className={classes.drawerContainer}>
-                    <List>
+                    <List style={{ padding: 0 }}>
                         {sampleSideMenuJson.map((navBar, index) => (
                             <> <ListItem onClick={(e) => navBar?.subMenus?.length > 0 ?
                                 handleOPenChildMenu(index) : onListClick(navBar)}

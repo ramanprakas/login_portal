@@ -5,7 +5,8 @@ import { SideNavBar, TopNavBar } from '../components';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    height: "100vh"
+    height: "100vh",
+    background: "#d3d3d33b"
   },
   content: {
     width: '100%',
